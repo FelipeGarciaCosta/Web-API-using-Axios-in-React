@@ -9,6 +9,6 @@ const getPosts = () => api.get('/posts'); //GET request to baseURL/posts
 const deletePost = (id) => api.delete(`/posts/${id}`);
 //a Request can have a body, in this case the body is a post object  
 const createPost = (post) => api.post('/posts', post);
+const updatePost = (id, post) => api.put(`/posts/${id}`, post);
 
-
-export { getPosts, deletePost, createPost };
+export { getPosts, deletePost, createPost, updatePost };
