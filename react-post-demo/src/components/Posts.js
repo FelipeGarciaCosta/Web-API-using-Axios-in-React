@@ -18,9 +18,10 @@ export default function Post() {
     }, []); //it renders twice, because of the index.js React.StrictMode
 
     const handleDelete = (id) => {
+        setPosts(posts.filter(post => post.id !== id)); //filtering out the post with the given id
         deletePost(id)
             .then(() => {
-                setPosts(posts.filter(post => post.id !== id)); //filtering out the post with the given id
+                console.log('Post Deleted Successfully');
             })
             .catch(err => {
                 console.log(err);
