@@ -7,7 +7,8 @@ const api = axios.create({
 
 const getPosts = () => api.get('/posts'); //GET request to baseURL/posts
 const deletePost = (id) => api.delete(`/posts/${id}`);
+//a Request can have a body, in this case the body is a post object  
+const createPost = (post) => api.post('/posts', post);
 
 
-
-export { getPosts, deletePost };
+export { getPosts, deletePost, createPost };
